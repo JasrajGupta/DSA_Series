@@ -4,10 +4,11 @@
 using namespace std;
 #include<climits>
 #include<algorithm>
+#include <bits/stdc++.h>
 
 int productofarrayacceptitself(vector<int>& nums){
    int  n = nums.size();
-    vector<int> ans(n,1);
+  vector<int>ans(n,1);
     //prefix calculation
     for(int i = 1; i<n; i++){
         ans[i] = ans[i-1] * nums[i -1];
