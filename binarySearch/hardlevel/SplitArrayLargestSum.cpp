@@ -19,7 +19,7 @@ bool isValid(vector<int>& nums, int n, int k, int maxAllowedSum){
             Sum = nums[i];
         }
 }
-return subarray <= k ? true : false;
+return subarray > k ? false : true;
 }
 int SplitArrayLargestSum(vector<int>& nums, int n, int k){
     if(k>n){
@@ -28,6 +28,9 @@ int SplitArrayLargestSum(vector<int>& nums, int n, int k){
     int sum = 0;
     for(int i = 0; i<n; i++){
         sum += nums[i];
+    }
+    if(sum == 0){
+        return 0;
     }
     int ans = -1;
     int st = 1 /* *max_element(nums.begin(), nums.end())*/, end = sum , mid;
@@ -46,6 +49,6 @@ return ans;
 }
 
 int main() {
-    vector<int> nums = {1,2,3,4,5};
+    vector<int> nums = {7,2,5,10,8};
     cout<<SplitArrayLargestSum(nums, 5, 2)<<endl;
 }
