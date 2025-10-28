@@ -31,7 +31,7 @@ return true;
 } 
 
 int main() {
-    string s = "1mada@m1";
+    string s = "Racecar";
     
     cout<< isPalindrome(s)<<endl;
     return 0;
